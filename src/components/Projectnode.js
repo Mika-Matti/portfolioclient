@@ -38,10 +38,7 @@ export default class Projectnode extends Component {
           <Link
             type="button"
             className="btn btn-dark"
-            to={{
-              pathname: `projects/${project_id}`,
-              param1: "Hello",
-            }}
+            to={`projects/${project_id}`}
           >
             Lue lisää
           </Link>
