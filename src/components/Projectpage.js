@@ -60,14 +60,19 @@ export default class Projectpage extends Component {
         <div className="px-3">
           <div className="row">
             <div className="col-lg-3 col-xs-12 border-right text-left ">
-              <h1 className="text-left pt-3">{project_name}</h1>
+              <h1 className="text-left pt-1">{project_name}</h1>
               <h3 className="mt-3 mb-1">Projektikuvaus</h3>
               <p>{project_desc}</p>
               <h3 className="mb-1">Lähdekoodit</h3>
               <ul>{linkItems}</ul>
             </div>
             <div className="col-lg-9 py-3 col-xs-12 border-right">
-              {project_content}
+              <div
+                className="text-left"
+                dangerouslySetInnerHTML={{
+                  __html: project_content,
+                }}
+              ></div>
               <Gallery images={images} />
             </div>
           </div>
