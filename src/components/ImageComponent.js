@@ -8,8 +8,9 @@ export default class ImageComponent extends React.Component {
   };
 
   getClassName = () => {
-    console.log("called");
-    return this.state.isOpen ? "image mx-3 my-3" : "col-lg-3 col-md-4 col-6";
+    return this.state.isOpen
+      ? "image mx-3 mb-3"
+      : "col-lg-6 col-md-6 col-xs-6 thumb mb-3";
   };
 
   render() {
@@ -18,27 +19,11 @@ export default class ImageComponent extends React.Component {
     return (
       <div className={this.getClassName()}>
         <img
-          className="img-fluid img-thumbnail"
+          className="img-fluid img-thumbnail border"
           src={link_url}
           alt=""
           onClick={this.handleShowDialog}
         />
-
-        {/* {this.state.isOpen && (
-          <dialog
-            className="dialog"
-            style={{ position: "absolute" }}
-            open
-            onClick={this.handleShowDialog}
-          >
-            <img
-              className="image"
-              src={link_url}
-              onClick={this.handleShowDialog}
-              alt="no image"
-            />
-          </dialog>
-        )} */}
       </div>
     );
   }

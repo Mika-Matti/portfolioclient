@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default class Projectnode extends Component {
   state = {
-    images: "404",
+    images: [{ link_url: "http://localhost:8080/images/noimage.png" }],
   };
 
   componentDidMount() {
@@ -13,7 +13,13 @@ export default class Projectnode extends Component {
       .get(
         `http://localhost:8080/projects/${this.props.project.project_id}/images`
       )
-      .then((res) => this.setState({ images: res.data }));
+      .then((res) => {
+        if (!res.data.length) {
+          console.log("No image available");
+        } else {
+          this.setState({ images: res.data });
+        }
+      });
   }
 
   render() {
@@ -26,7 +32,7 @@ export default class Projectnode extends Component {
           <Link to={`projects/${project_id}`}>
             <img
               className="img-fluid rounded mb-3 mb-md-0"
-              style={{ height: 300, width: 700, objectFit: "cover" }}
+              style={{ height: 300, width: 700, objectFit: "scale-down" }}
               src={link_url}
               alt="http://placehold.it/700x300"
             />

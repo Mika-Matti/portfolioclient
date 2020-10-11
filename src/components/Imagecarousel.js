@@ -5,22 +5,20 @@ const Imagecarousel = (props) => {
   let int = 0;
 
   const getClassName = () => {
-    console.log("called");
     int++;
-    return int === 1 ? "item active" : "item";
+    return int === 1 ? "item active text-left" : "item text-left";
   };
 
   const imageitems = images.map((image) => (
     <div
       key={image.link_id}
       className={`carousel-${getClassName()}`}
-      style={{ height: 300 }}
+      style={{ maxHeight: 400, backgroundColor: "#0c0c0c" }}
     >
       <img
         src={image.link_url}
-        className="d-block img-fluid"
+        className="img-fluid-carousel img-fluid"
         alt={image.link_desc}
-        // style={{ maxHeight: "auto", maxWidth: "1140px" }}
       />
     </div>
   ));
@@ -28,7 +26,7 @@ const Imagecarousel = (props) => {
   return (
     <div
       id="imagecarousel"
-      className="carousel slide border-right"
+      className="carousel slide border-bottom border-top"
       data-ride="carousel"
     >
       <div className="carousel-inner">{imageitems}</div>
