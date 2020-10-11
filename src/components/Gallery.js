@@ -1,14 +1,16 @@
 import React from "react";
+import ImageComponent from "./ImageComponent";
 
 const Gallery = (props) => {
   const { images } = props;
 
   const imageitems = images.map((image) => (
-    <div key={image.link_id} class="col-lg-3 col-md-4 col-6">
-      <a href="#" class="d-block mb-4 h-100">
-        <img class="img-fluid img-thumbnail" src={image.link_url} alt="" />
-      </a>
-    </div>
+    // <div key={image.link_id} class="col-lg-3 col-md-4 col-6">
+    //   <a href="#" class="d-block mb-4 h-100">
+    //     <img class="img-fluid img-thumbnail" src={image.link_url} alt="" />
+    //   </a>
+    // </div>
+    <ImageComponent key={image.link_id} image={image} />
   ));
 
   return (

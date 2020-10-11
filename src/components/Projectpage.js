@@ -55,18 +55,18 @@ export default class Projectpage extends Component {
     ));
 
     return (
-      <div>
+      <div className="container">
         <Imagecarousel images={images} />
         <div className="px-3">
           <div className="row">
-            <div className="col-3 border-right text-left">
+            <div className="col-lg-3 col-xs-12 border-right text-left ">
               <h1 className="text-left pt-3">{project_name}</h1>
               <h3 className="mt-3 mb-1">Projektikuvaus</h3>
               <p>{project_desc}</p>
               <h3 className="mb-1">Lähdekoodit</h3>
               <ul>{linkItems}</ul>
             </div>
-            <div className="col-9 py-3 border-right">
+            <div className="col-lg-9 py-3 col-xs-12 border-right">
               {project_content}
               <Gallery images={images} />
             </div>
