@@ -24,7 +24,7 @@ export default class Projects extends Component {
           return (
             <div className="container">
               {/* header */}
-              <h1 className="display-5 mb-3 text-left">Projektit</h1>
+              <h1 className="display-5 my-3 text-left">Projektit</h1>
               {/* project nodes */}
               {projects.map((project) => (
                 <Projectnode key={project.project_id} project={project} />
